@@ -1,0 +1,164 @@
+.header{
+  display: flex;
+  position: fixed;
+  width:100%;
+  background-color: greenyellow;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+ 
+}
+
+.h2{
+  color: green;
+}
+
+.search{
+  position: relative;
+  width: 255px;
+  height: 25px;
+  background-color: aquamarine;
+  margin: 0 5px 0 5px;
+  border-radius: 10px;
+}
+.search input{
+  color: green;
+  position: absolute;
+  left: 4px;
+  margin: 2px;
+  outline: none;
+  background: transparent;
+  font-weight: bold;
+  border-style: none;  
+  font-size: 16px;
+}
+::placeholder{
+  color: green;
+}
+.search button{
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: green;
+  right: -5px;
+  border: none;
+  top: -5px;
+}
+
+.navbtn{
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+ }
+.navbtn a{
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+}
+.navbtn a:hover {
+  color: yellow;
+}
+
+.body{
+  width: 100vw;
+  display: flex;
+  position: relative;
+  top: 80px;
+}
+
+
+.genre{
+  width: 175px;
+  height: 78vh;
+  margin: 0 10px 0 30px;
+  position: fixed;
+  border-radius: 10px;
+  background-color: greenyellow;
+  
+}
+
+.genre h2{
+  position: relative;
+  color: green;
+  margin: 10px 0 15px 0 ;
+  left: 25%;
+
+}
+.genreList{
+  margin: 15px 6px 15px 6px;
+  width: 70%;
+  height: 77%;
+  
+  background-color: transparent;
+  overflow: scroll;
+ 
+}
+.genreList::-webkit-scrollbar {
+  display: none;
+}
+
+.genreItem{
+  background-color: greenyellow;
+  border: solid 3px green;
+  list-style: none;
+  height: 25px;
+  width: max-content;
+  position: relative;
+  right: 30px;
+  color: green;
+  font-weight: 900;
+  margin: 10px 0 10px 0;
+  border-radius: 7px;
+  padding: 0 10px 0 10px;
+}
+.genreItem a{
+  color: green;
+}
+
+.content{
+  
+  position: relative;
+  left: 200px;
+  display: flex;
+  width: 85vw;
+  margin: 0 25px;
+}
+
+.topAnime{
+  border-radius: 10px;
+  height: 400px;
+  width: 85vw;
+  display: flex;
+  background-color: greenyellow;
+  overflow: hidden;
+}
+
+.animeCard{
+  margin: 10px 20px;
+}
+.title{
+  color: green;
+  font-weight: 800;
+  width: fit-content;
+  width: 220px;
+}
+
+.animeCard img:hover{
+  height: 325px;
+  width: 220px;
+  box-shadow: 5px 10px 8px green;
+}
+.main{
+ 
+  display: flex;
+  flex-wrap: wrap;
+  width: 85vw;
+}
+
+.main img{
+  border: solid 3px black;
+  box-sizing: border-box;
+}
+
+
