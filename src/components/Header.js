@@ -5,7 +5,8 @@ const Header = () => {
   
     return (
     <header className="header">
-        <h2 className="h2">AimeSpring</h2>
+        <h2 className="h2">AnimeSpring</h2>
+        
         <InputField/>
         <div className="navbtn">
           <a href="/"><MdHome  fontSize="25px"/> Home</a>

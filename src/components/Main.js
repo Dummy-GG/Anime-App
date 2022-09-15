@@ -1,32 +1,30 @@
 import AnimeCard from "./AnimeCard"
-import { React, useEffect, useState, useContext } from "react"
+import { React, useContext, useEffect, useState} from "react"
 import DataContext from "../DataContext/DataContext"
-const Main = ({ busy }) => {
-  const [count,setCount] = useState(0)
+const Main = () => {
+
   const [animeList, setAnimeList] = useState([])
-  const {currentFetch,setCurrentFetch} = useContext(DataContext)
-  console.log(currentFetch)
-  const getAnimeGenre = async () => {
-    const animeGenre = await fetch("https://api.jikan.moe/v4/anime?status=complete")
-    const animeGenreJson = await animeGenre.json()
-    setAnimeList(animeGenreJson.data)
-    setCount(1)
-    
+  const {currentFetch} = useContext(DataContext)
+  const [loading,setLoading] = useState(true)
+  const getAnime = async () => {
+    console.log(currentFetch)
+    const animeGenre = await fetch("https://api.jikan.moe/v4/top/anime")
+    const animeGenreJson = await animeGenre.json().then((animeGenreJson) => {
+      setAnimeList(animeGenreJson.data)
+      setLoading(false)
+    })
   }
   useEffect(() => {
-   count === 0 && currentFetch === "Main" && getAnimeGenre()
-   console.log(count)
-  }, [currentFetch])
-  /*useEffect(() => {
-    (async () => setAnimeList(await anime))()
-    console.log(animeList)
-  })*/
-  //console.log(anime)
+   currentFetch === "Main" && getAnime()
+    
+  },[currentFetch])
+  
   return (
     <>
       <h2>Animes</h2>
       <div className="main">
-        { animeList?.map((anime) => (
+        {loading && <p>loading..</p>}
+        {!loading &&  animeList.map((anime) => (
           <AnimeCard image={anime.images.jpg.image_url} title={anime.title} key={anime.mal_id} />
        ))}
       </div>

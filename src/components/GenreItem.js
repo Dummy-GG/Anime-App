@@ -1,7 +1,7 @@
-const GenreItem = ({ genre }) => {
+const GenreItem = ({ name,id}) => {
     return (
         <li className="genreItem" >
-            <a href={genre.url}>{genre.name}</a>
+            <a href={`/${id}`}>{name}</a>
         </li>
     )
   }
